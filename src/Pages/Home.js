@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import axios from 'axios';
 import Post from '../Components/Post'
+import HeaderComp from "../Components/Header"
 
 let API_URL = `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=56e93abee1e94703a4c99090376efa3b`
 const Home = (props) => {
@@ -29,9 +30,12 @@ const Home = (props) => {
 
     return (
         <View style={{ backgroundColor: "#c0392b" }}>
-            <ScrollView>
-                {renderNews()}
-            </ScrollView>
+            <HeaderComp/>
+            <View>
+                <ScrollView>
+                    {renderNews()}
+                </ScrollView>
+            </View>
         </View>
     )
 }
